@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsiveness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">Portfolio</a>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="home" id="home">
+        <div class="home-info">
+            <h1>James Llagas</h1>
+            <h2>I'm a Frontend Developer</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi exercitationem 
+                tempora dolor atque adipisci corporis, in praesentium! Pariatur vel maxime, eaque commodi 
+                soluta consequuntur explicabo animi quis quam ratione dolorum?</p>
+            <div class="btn-sci">
+                <a href="#" class="btn">Dawnload CV</a>
+                <div class="sci">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="images/me.png" alt="My Self">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h1>About Me</h1>
+    </section>
+
+    <section class="skills" id="skills">
+        <h1>Skills</h1>
+    </section>
+
+
+
+
+    
+    <script src="js/menu-toggle.js"></script>
+
+<script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar ul li");
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navbar.offsetHeight;
+            const sectionHeight = section.offsetHeight;
+
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        /* ACTIVE NAV LINK */
+        navLinks.forEach(li => {
+            li.classList.remove("active");
+            const link = li.querySelector("a");
+
+            if (link.getAttribute("href") === "#" + current) {
+                li.classList.add("active");
+            }
+        });
+
+        /* NAVBAR BACKGROUND CONTROL */
+        navbar.classList.remove("home-bg", "about-bg", "skills-bg");
+
+        if (current === "home") {
+            navbar.classList.add("home-bg");
+        } else if (current === "about") {
+            navbar.classList.add("about-bg");
+        } else if (current === "skills") {
+            navbar.classList.add("skills-bg");
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

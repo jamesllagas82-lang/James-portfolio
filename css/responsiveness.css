@@ -1,0 +1,439 @@
+
+
+
+/* ============================== TABLET RESPONSIVENESS 768 – 991 pixel ========================= */
+
+@media (max-width: 1024px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .navbar {
+        padding: 16px 9%;
+    }
+
+    .navbar ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: darkturquoise;
+        flex-direction: row;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(0px);
+        transition: all 0.4s ease;
+
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .navbar ul li {
+        margin-left: 0px;
+    }
+
+    .navbar ul.active {
+        max-height: 200px; /* large enough */
+        opacity: 1;
+        transform: translateY(0);
+        border-top: 1px solid #fff;
+        border-bottom: 2px solid rgb(255, 255, 255, 0.4);
+    }
+
+    /* Hamburger animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: #fff;
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+        background-color: #fff;
+    }
+
+
+    .navbar ul li a {
+        color: #1f242d;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li.active a {
+        color: #fff;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .home {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 12% 0; 
+        text-align: center;
+        height: 100dvh;
+    }
+
+    .home .home-info {
+        text-align: center;
+    }
+
+    .home-img .img-box {
+        width: 30vw;
+        height: 30vw;        
+    }
+
+    .home-img .img-box .img-item {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .home-img .img-box .img-item img {
+        top: 0px;
+        width: 100%;
+    }
+
+    .home-info h1 {
+        font-size: 35px;
+    }
+
+    .home-info h2 {
+        font-size: 24px;
+    }
+
+    .home-info p {
+        font-size: 16px;
+    }
+
+     .home-info .btn-sci {
+        display: block;
+    }
+
+    .btn {
+        padding: 10px 30px;
+        font-size: 16px;
+        /* border-radius: 60px; */
+    }
+
+    .home-info .btn-sci .sci {
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    .home-info .btn-sci .sci a {
+        padding: 8px;
+        border: 2px solid darkturquoise;
+        border-radius: 50%;
+        font-size: 20px;
+        color: darkturquoise;
+        margin: 0 8px;
+        transition: .5s;
+    }
+    
+}
+
+
+/* ============================== MOBILE LARGE RESPONSIVENESS 576 – 767 pixel ========================= */
+
+@media (max-width: 768px) {
+    
+    .navbar {
+        padding: 16px 8%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle span {
+        height: 3px;
+        width: 35px;
+        background: darkturquoise;
+        margin: 4px 0;
+        transition: 1s;
+    }
+
+
+    .navbar ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: darkturquoise;
+        flex-direction: row;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(0px);
+        transition: all 0.4s ease;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .navbar ul li {
+        margin-left: 0px;
+    }
+
+    .navbar ul.active {
+        max-height: 200px; /* large enough */
+        opacity: 1;
+        transform: translateY(0);
+        border-top: 1px solid #fff;
+        border-bottom: 2px solid rgb(255, 255, 255, 0.4);
+    }
+
+    /* Hamburger animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: #fff;
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+        background-color: #fff;
+    }
+
+
+
+    .navbar ul li a {
+        color: #1f242d;
+        font-size: 16px;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li.active a {
+        color: #fff;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 3% 0; 
+        text-align: center;
+        height: 100dvh;
+    }
+
+    .home .home-info {
+        text-align: center;
+    }
+
+    .home-img .img-box {
+        width: 40vw;
+        height: 40vw;        
+    }
+
+    .home-img .img-box .img-item {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .home-img .img-box .img-item img {
+        top: 0px;
+        width: 100%;
+    }
+
+    .home-info h1 {
+        font-size: 35px;
+    }
+
+    .home-info h2 {
+        font-size: 24px;
+    }
+
+    .home-info p {
+        font-size: 16px;
+    }
+
+     .home-info .btn-sci {
+        display: block;
+    }
+
+    .btn {
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+
+    .home-info .btn-sci .sci {
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    .home-info .btn-sci .sci a {
+        padding: 8px;
+        border: 2px solid darkturquoise;
+        border-radius: 50%;
+        font-size: 20px;
+        color: darkturquoise;
+        margin: 0 8px;
+        transition: .5s;
+    }
+
+}
+
+
+/* ============================== MOBILE SMALL RESPONSIVENESS 576 – 767 pixel ========================= */
+
+@media (max-width: 575px) {
+
+    .navbar {
+        padding: 16px 9%;
+    }
+
+    .navbar .logo {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle span {
+        height: 3px;
+        width: 35px;
+        background: darkturquoise;
+        margin: 4px 0;
+        transition: 1s;
+    }
+
+
+    .navbar ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: darkturquoise;
+        flex-direction: row;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(0px);
+        transition: all 0.4s ease;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .navbar ul li {
+        margin-left: 0px;
+    }
+
+    .navbar ul.active {
+        max-height: 200px; /* large enough */
+        opacity: 1;
+        transform: translateY(0);
+        border-top: 1px solid #fff;
+        border-bottom: 2px solid rgb(255, 255, 255, 0.4);
+    }
+
+    /* Hamburger animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: #fff;
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+        background-color: #fff;
+    }
+
+
+    .navbar ul li a {
+        color: #1f242d;
+        font-size: 12px;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li.active a {
+        color: #fff;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 4% 0; 
+        text-align: center;
+        height: 100dvh;
+    }
+
+    .home .home-info {
+        text-align: center;
+    }
+
+    .home-img .img-box {
+        width: 50vw;
+        height: 50vw;        
+    }
+
+    .home-img .img-box .img-item {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .home-img .img-box .img-item img {
+        top: 0px;
+        width: 100%;
+    }
+
+    .home-info h1 {
+        font-size: 35px;
+    }
+
+    .home-info h2 {
+        font-size: 24px;
+    }
+
+    .home-info p {
+        font-size: 12px;
+    }
+
+     .home-info .btn-sci {
+        display: block;
+    }
+
+    .btn {
+        padding: 10px 30px;
+    }
+
+    .home-info .btn-sci .sci {
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    .home-info .btn-sci .sci a {
+        padding: 8px;
+        border: 2px solid darkturquoise;
+        border-radius: 50%;
+        font-size: 20px;
+        color: darkturquoise;
+        margin: 0 8px;
+        transition: .5s;
+    }
+}

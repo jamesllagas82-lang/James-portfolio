@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #1f242d;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 40px;
+    background: darkturquoise;
+    margin: 4px 0;
+    transition: 1s;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+    position: fixed;
+    /* background: #1f242d; */
+    backdrop-filter: blur(50px); 
+    opacity: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: 0.6s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-navbar 1.5s linear forwards;
+    /* animation-delay: 1.2s; */
+}
+
+@keyframes show-navbar {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/* ========= Nav bar change BG according to section */
+
+.navbar.home-bg {
+    background: #1f242d;
+}
+
+.navbar.about-bg {
+    background: #000;
+}
+
+.navbar.skills-bg {
+    background: #1f242d;
+}
+
+
+
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.navbar ul li {
+    list-style: none;
+    margin-left: 35px;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li.active a {
+    color: darkturquoise;
+}
+
+/* ===================== HOME =================== */
+
+.home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: darkturquoise;
+}
+
+.home-info h1 {
+    font-size: 55px;
+    animation: show-home-info-content 1.5s forwards;
+    transition: 0.6s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.home-info h2 {
+    animation: show-home-info-content 1.5s forwards;
+    transition: 0.6s;
+    font-size: 32px;
+    margin-top: -10px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.home-info p {
+    animation: show-home-info-content 1.5s forwards;
+    font-size: 16px;
+    margin: 10px 0 25px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    visibility: hidden;
+    opacity: 0;
+    animation: show-home-info-content 1.5s forwards;
+    display: inline-block;
+    padding: 10px 30px;
+    background: darkturquoise;
+    border: 2px solid darkturquoise;
+    border-radius: 40px;
+    box-shadow: 0 0 10px darkturquoise;
+    font-size: 16px;
+    color: #1f242d;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: darkturquoise;
+    box-shadow: none;
+}
+
+.home-info .btn-sci .sci {
+    visibility: hidden;
+    opacity: 0;
+    animation: show-home-info-content 1.5s forwards;
+    margin-left: 20px;
+}
+
+.home-info .btn-sci .sci a {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid darkturquoise;
+    border-radius: 50%;
+    font-size: 20px;
+    color: darkturquoise;
+    margin: 0 8px;
+    transition: .5s;
+}
+
+.home-info .btn-sci .sci a:hover {
+    background: darkturquoise;
+    color: #fff;
+    box-shadow: 0 0 10px darkturquoise;
+}
+
+
+@keyframes show-home-info-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/* ========== Home Image =============== */
+
+.home-img .img-box {
+    position: relative;
+    margin-left: 25px;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: bgScale 1.5s ease forwards;
+}
+
+@keyframes bgScale {
+    /* from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    } */
+    from {
+
+        transform: translateX(-180px);
+        transform: scaleX(0) scaleY(0);
+        transform-origin: bottom left;
+        /* transform: translateX(-1200px) scale(0); */
+    }
+    to {
+        transform: scaleX(1) scaleY(1);
+        /* transform: translateX(0) scale(1); */
+    }
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, darkturquoise);
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.home-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    border: .1px solid #1f242d;
+}
+
+.home-img .img-box .img-item img {
+    position: absolute;
+    top: 73px;
+    display: block;
+    width: 85%;
+    object-fit: cover;
+    animation: slideUp 1.2s ease-out forwards;
+    mix-blend-mode: lighten;
+}
+
+
+
+
+/* ============================= About Me ============================== */
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    background: #fff;
+    color: darkturquoise;
+}
+
+
+.skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    background: #1f242d;
+    color: darkturquoise;
+}
